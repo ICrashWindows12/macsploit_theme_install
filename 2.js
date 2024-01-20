@@ -83,19 +83,19 @@ define("ace/theme/tomorrow_night", ["require", "exports", "module", "ace/lib/dom
     .ace-tomorrow_night-theme .ace_keyword.ace_other.ace_unit,
     .ace-tomorrow_night-theme .ace_support.ace_constant,
     .ace-tomorrow_night-theme .ace_variable.ace_parameter {
-      color: #FFFFFF;
+      color: #4B0082;
     }
     
     .ace-tomorrow_night-theme .ace_constant.ace_other {
-      color: #FFFFFF;
+      color: #4B0082;
     }
     
     .ace-tomorrow_night-theme .ace_invalid {
-      color: #FFFFFF;
+      color: #4B0082;
       background-color: transparent;
     }
     .ace-tomorrow_night-theme .ace_invalid.ace_deprecated {
-      color: #FFFFFF;
+      color: #4B0082;
       background-color: transparent;
     }
     
