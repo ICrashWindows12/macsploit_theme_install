@@ -4,7 +4,7 @@ define("ace/theme/tomorrow_night", ["require", "exports", "module", "ace/lib/dom
   t.cssText = `
     .ace-tomorrow_night-theme .ace_gutter {
       background: transparent;
-      color: #0000FF;  
+      color: #4B0082;  
     }
     
     .ace-tomorrow_night-theme .ace_print-margin {
@@ -15,7 +15,7 @@ define("ace/theme/tomorrow_night", ["require", "exports", "module", "ace/lib/dom
     .ace-tomorrow_night-theme {
       background: url('https://upload.wikimedia.org/wikipedia/commons/a/a1/Static_screen_TV.png') no-repeat center center fixed;
       background-size: cover;
-      color: #0000FF;
+      color: #4B0082;
       text-shadow: #C0C0C0;
       border: #edebeb;
     }
