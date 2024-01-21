@@ -1,3 +1,6 @@
+<p align="center"><img src="https://i.postimg.cc/HsvGM2fh/Screenshot-2024-01-21-at-15-48-26.png" alt="Installation Screen"></p>
+
+
 # Installation
 1. Run this to get access to install themes `curl -s "https://raw.githubusercontent.com/ICrashWindows12/macsploit_theme_install/main/macsploit_theme_selection.sh" | Bash`
 2. A window will pop up prompting you what you want theme you want to install
