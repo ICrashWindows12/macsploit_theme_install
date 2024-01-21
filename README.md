@@ -2,11 +2,15 @@
 
 
 # Installation
-1. Run this to get access to install themes `curl -s "https://raw.githubusercontent.com/ICrashWindows12/macsploit_theme_install/main/macsploit_theme_selection.sh" | Bash`
-2. A window will pop up prompting you what you want theme you want to install
-3. Select either `Hacker-Style UI` or `TV Static UI`. You may notice an option for `QuackR` so you can run that to make your own theme.
-4. Once you clicked to select an option, click Ok and you will go through the installation process
-5. Open up Macsploit (A paid exploit) and you can see the theme in effect
+1. Run this to get access to install themes
+```bash
+curl -s "https://raw.githubusercontent.com/ICrashWindows12/macsploit_theme_install/main/macsploit_theme_selection.sh" | Bash
+```
+
+3. A window will pop up prompting you what you want theme you want to install
+4. Select either `Hacker-Style UI` or `TV Static UI`. You may notice an option for `QuackR` so you can run that to make your own theme.
+5. Once you clicked to select an option, click Ok and you will go through the installation process
+6. Open up Macsploit (A paid exploit) and you can see the theme in effect
 
 # Notes
 - If macsploit is open, restart macsploit (close and open) to see the theme in effect
