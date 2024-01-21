@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Prompt user to select a theme
-theme=$(osascript -e 'choose from list {"Theme1", "Theme2"} with title "Select a Theme"')
+theme=$(osascript -e 'choose from list {"Hacker-Style UI", "TV Static UI"} with title "Select a Theme"')
 
 # Install selected theme based on user choice
 case $theme in
