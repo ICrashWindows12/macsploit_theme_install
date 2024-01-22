@@ -15,7 +15,7 @@ show_credits() {
 # Function to install themes
 install_theme() {
   local theme_url="$1"
-  curl -s "$theme_url" | bash
+  bash <(curl -s "$theme_url")
 }
 
 # Array of available themes
