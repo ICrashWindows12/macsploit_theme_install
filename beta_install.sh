@@ -2,11 +2,14 @@
 
 # Function to display credits
 show_credits() {
-  osascript -e 'tell application "System Events" to activate
-                tell application "Finder"
-                  set creditsText to "Credits:\n\n🖼️ Image of the App\n📝 Name of the App\n🔢 Version Number\n👤 Creator"
-                  display dialog creditsText with title "Theme Credits"
-                end tell'
+  icon_url="https://raw.githubusercontent.com/ICrashWindows12/macsploit_theme_install/main/Theme%20InstallER.png"
+
+  # Display credits with the image as an icon in the center
+  osascript -e "tell application \"System Events\" to activate
+                tell application \"Finder\"
+                  set creditsText to \"Credits:\\n\\n📝 Name of the App\\n🔢 Version Number\\n👤 Creator\"
+                  display dialog creditsText buttons {\"OK\"} with title \"Theme Credits\" icon location POSIX file \"$icon_url\"
+                end tell"
 }
 
 # Prompt user to select a theme
