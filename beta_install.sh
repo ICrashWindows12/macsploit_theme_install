@@ -22,7 +22,7 @@ install_theme() {
 themes=("Hacker-Style UI" "TV Static UI" "QuackR")
 
 # Prompt user to select a theme
-selected_theme=$(osascript -e 'choose from list {"'$(IFS=,; echo "${themes[*]}")'", "Show Credits", "Cancel"} with title "Select a Theme"')
+selected_theme=$(osascript -e 'choose from list {"'"${themes[@]}"'", "Show Credits", "Cancel"} with title "Select a Theme"')
 
 # Check if the user selected the "Show Credits" button
 if [ "$selected_theme" == "Show Credits" ]; then
