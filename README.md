@@ -13,7 +13,7 @@ curl -s "https://raw.githubusercontent.com/ICrashWindows12/macsploit_theme_insta
 
 2. A window will pop up prompting you what theme you want to install
 3. Select either `Hacker-Style UI` or `TV Static UI`. Running `beta mode` will also give an option for `Credits`
-4. Once you clicked to select an option, click Ok and you will go through the installation process
+4. Once you clicked to select an option, click Ok and you will go through the installation process or when you selected `Credits` another window will pop up showing credits and open source software that I used
 5. Open up Macsploit (A paid exploit) and you can see the theme in effect
 
 # Notes
