@@ -4,7 +4,9 @@
 show_credits() {
   osascript <<EOF
     set theDialogText to "![Theme Installer](https://github.com/ICrashWindows12/macsploit_theme_install/raw/main/Theme%20InstallER.png)\\nVersion: 0.2\\nDeveloper: 901million"
-    display dialog theDialogText with title "Theme Credits" buttons {"OK"} default button "OK"
+    set theImagePath to POSIX path of (path to temporary items folder) & "Theme InstallER.png"
+    do shell script "curl -s -o " & quoted form of theImagePath & " 'https://github.com/ICrashWindows12/macsploit_theme_install/raw/main/Theme%20InstallER.png'"
+    display dialog theDialogText with title "Theme Credits" buttons {"OK"} default button "OK" with icon file theImagePath
 EOF
 }
 
