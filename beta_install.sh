@@ -12,7 +12,7 @@ EOF
 show_theme_selection() {
   osascript <<EOF
     set themeButtons to {"Hacker-Style UI", "TV Static UI", "Credits"}
-    set chosenTheme to choose from list themeButtons with title "Select a Theme or Show Credits" without multiple selections allowed and empty selection allowed
+    set chosenTheme to choose from list themeButtons with title "Select a Theme" without multiple selections allowed and empty selection allowed
     if chosenTheme is false then
       error "User canceled."
     else
@@ -32,7 +32,6 @@ fi
 # Check if the user selected the "Credits" option
 if [ "$theme" == "Credits" ]; then
   show_credits
-  exit 0
 fi
 
 # Install selected theme based on user choice
