@@ -1,18 +1,21 @@
 #!/bin/bash
 
-# Function to display credits
+# Function to display credits using AppleScript
 show_credits() {
-  osascript -e 'display dialog "![Theme Installer](https://github.com/ICrashWindows12/macsploit_theme_install/blob/main/Theme%20InstallER.png?raw=true)\nVersion: 0.2\nDeveloper: 901million" with title "Theme Credits" with icon file "path/to/your/icon/image.png"'
+  osascript <<EOF
+    set theDialogText to "![Theme Installer](https://github.com/ICrashWindows12/macsploit_theme_install/blob/main/Theme%20InstallER.png?raw=true)\\nVersion: 0.2\\nDeveloper: 901million"
+    display dialog theDialogText with title "Theme Credits" buttons {"OK"} default button "OK" with icon file "path/to/your/icon/image.png"
+EOF
 }
 
 # Prompt user to select a theme
-theme=$(osascript -e 'choose from list {"Hacker-Style UI", "TV Static UI", "QuackR"} with title "Select a Theme"')
+theme=$(osascript -e 'choose from list {"Hacker-Style UI", "TV Static UI", "QuackR", "Show Credits", "Cancel"} with title "Select a Theme"')
 
 # Check if the user selected the "Show Credits" option
 if [ "$theme" == "Show Credits" ]; then
   show_credits
   exit 0
-elif [ -z "$theme" ]; then
+elif [ "$theme" == "Cancel" ]; then
   exit 0  # User clicked "Cancel"
 fi
 
