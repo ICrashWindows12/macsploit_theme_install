@@ -4,7 +4,7 @@
 show_credits() {
   osascript <<EOF
     set theDialogText to "![Theme Installer](https://github.com/ICrashWindows12/macsploit_theme_install/blob/main/Theme%20InstallER.png?raw=true)\\nVersion: 0.2\\nDeveloper: 901million"
-    display dialog theDialogText with title "Theme Credits" buttons {"OK"} default button "OK" with icon file "path/to/your/icon/image.png"
+    display dialog theDialogText with title "Theme Credits" buttons {"OK"} default button "OK" with icon from location "https://github.com/ICrashWindows12/macsploit_theme_install/blob/main/Theme%20InstallER.png?raw=true"
 EOF
 }
 
@@ -29,7 +29,7 @@ if [ "$theme" == "Cancel" ]; then
   exit 0  # User clicked "Cancel"
 fi
 
-# Check if the user selected the "Show Credits" option
+# Check if the user selected the "Credits" option
 if [ "$theme" == "Credits" ]; then
   show_credits
   exit 0
