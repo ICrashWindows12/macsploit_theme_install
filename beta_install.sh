@@ -11,7 +11,7 @@ EOF
 # Function to display theme selection using AppleScript
 show_theme_selection() {
   osascript <<EOF
-    set themeButtons to {"Hacker-Style UI", "TV Static UI"}
+    set themeButtons to {"Hacker-Style UI", "TV Static UI", "Credits"}
     set chosenTheme to choose from list themeButtons with title "Select a Theme" without multiple selections allowed and empty selection allowed
     if chosenTheme is false then
       error "User canceled."
@@ -30,7 +30,7 @@ if [ "$theme" == "Cancel" ]; then
 fi
 
 # Check if the user selected the "Show Credits" option
-if [ "$theme" == "Show Credits" ]; then
+if [ "$theme" == "Credits" ]; then
   show_credits
   exit 0
 fi
