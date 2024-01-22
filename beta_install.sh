@@ -4,7 +4,7 @@
 show_credits() {
   osascript <<EOF
     set theDialogText to "![Theme Installer](https://github.com/ICrashWindows12/macsploit_theme_install/raw/main/Theme%20InstallER.png)\\nVersion: 0.2\\nDeveloper: 901million"
-    display dialog theDialogText with title "Theme Credits" buttons {"OK"} default button "OK"
+    display dialog theDialogText with title "Theme Credits" buttons {"OK"} default button "OK" with icon alias ((path to home folder as text) & "Downloads:Theme InstallER.png")
 EOF
 }
 
