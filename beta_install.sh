@@ -8,22 +8,37 @@ show_credits() {
 EOF
 }
 
+# Function to display theme selection using AppleScript
+show_theme_selection() {
+  osascript <<EOF
+    set themeButtons to {"Hacker-Style UI", "TV Static UI"}
+    set chosenTheme to choose from list themeButtons with title "Select a Theme" without multiple selections allowed and empty selection allowed
+    if chosenTheme is false then
+      error "User canceled."
+    else
+      return chosenTheme as string
+    end if
+EOF
+}
+
 # Prompt user to select a theme
-theme=$(osascript -e 'choose from list {"Hacker-Style UI", "TV Static UI", "QuackR", "Show Credits", "Cancel"} with title "Select a Theme"')
+theme=$(show_theme_selection)
+
+# Check if the user selected the "Cancel" option
+if [ "$theme" == "Cancel" ]; then
+  exit 0  # User clicked "Cancel"
+fi
 
 # Check if the user selected the "Show Credits" option
 if [ "$theme" == "Show Credits" ]; then
   show_credits
   exit 0
-elif [ "$theme" == "Cancel" ]; then
-  exit 0  # User clicked "Cancel"
 fi
 
 # Install selected theme based on user choice
 case $theme in
   "Hacker-Style UI") curl -s "https://raw.githubusercontent.com/ICrashWindows12/macsploit_theme_install/main/1themeinstall.sh" | bash ;;
   "TV Static UI") curl -s "https://raw.githubusercontent.com/ICrashWindows12/macsploit_theme_install/main/2themeinstall.sh" | bash ;;
-  "QuackR") curl -s "https://raw.githubusercontent.com/ZackDaQuack/macsploit-custom-themes/main/duck.sh" | bash ;;
   *) echo "Invalid selection"; exit 1 ;;
 esac
 
