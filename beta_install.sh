@@ -12,24 +12,29 @@ show_credits() {
                 end tell"
 }
 
+# Function to install themes
+install_theme() {
+  local theme_url="$1"
+  curl -s "$theme_url" | bash
+}
+
+# Array of available themes
+themes=("Hacker-Style UI" "TV Static UI" "QuackR")
+
 # Prompt user to select a theme
-theme=$(osascript -e 'choose from list {"Hacker-Style UI", "TV Static UI", "QuackR"} with title "Select a Theme" buttons {"Show Credits", "Cancel"}')
+selected_theme=$(osascript -e 'choose from list {"'$(IFS=,; echo "${themes[*]}")'", "Show Credits", "Cancel"} with title "Select a Theme"')
 
 # Check if the user selected the "Show Credits" button
-if [ "$theme" == "Show Credits" ]; then
+if [ "$selected_theme" == "Show Credits" ]; then
   show_credits
   exit 0
 fi
 
-# Install selected theme based on user choice
-case $theme in
-  "Hacker-Style UI") curl -s "https://raw.githubusercontent.com/ICrashWindows12/macsploit_theme_install/main/1themeinstall.sh" | bash ;;
-  "TV Static UI") curl -s "https://raw.githubusercontent.com/ICrashWindows12/macsploit_theme_install/main/2themeinstall.sh" | bash ;;
-  "QuackR") curl -s "https://raw.githubusercontent.com/ZackDaQuack/macsploit-custom-themes/main/duck.sh" | bash ;;
-  *) echo "Installation canceled"; exit 0 ;;
-esac
-
-# Additional installation steps if needed
-# ...
-
-echo -e "Installation complete!"
+# Check if the user selected a valid theme
+if [[ " ${themes[@]} " =~ " ${selected_theme} " ]]; then
+  theme_url="https://raw.githubusercontent.com/ICrashWindows12/macsploit_theme_install/main/${selected_theme// /}.sh"
+  install_theme "$theme_url"
+  echo -e "Installation complete!"
+else
+  echo "Installation canceled"
+fi
