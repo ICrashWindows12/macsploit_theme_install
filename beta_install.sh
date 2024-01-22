@@ -3,8 +3,8 @@
 # Function to display credits using AppleScript
 show_credits() {
   osascript <<EOF
-    set theDialogText to "![Theme Installer](https://github.com/ICrashWindows12/macsploit_theme_install/blob/main/Theme%20InstallER.png)\\nVersion: 0.2\\nDeveloper: 901million"
-    display dialog theDialogText with title "Theme Credits" buttons {"OK"} default button "OK" with icon from location "https://github.com/ICrashWindows12/macsploit_theme_install/blob/main/Theme%20InstallER.png"
+    set theDialogText to "![Theme Installer](https://github.com/ICrashWindows12/macsploit_theme_install/raw/main/Theme%20InstallER.png)\\nVersion: 0.2\\nDeveloper: 901million"
+    display dialog theDialogText with title "Theme Credits" buttons {"OK"} default button "OK"
 EOF
 }
 
@@ -12,7 +12,7 @@ EOF
 show_theme_selection() {
   osascript <<EOF
     set themeButtons to {"Hacker-Style UI", "TV Static UI", "Credits"}
-    set chosenTheme to choose from list themeButtons with title "Select a Theme" without multiple selections allowed and empty selection allowed
+    set chosenTheme to choose from list themeButtons with title "Select a Theme or Show Credits" without multiple selections allowed and empty selection allowed
     if chosenTheme is false then
       error "User canceled."
     else
