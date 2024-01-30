@@ -19,6 +19,8 @@ curl -s "https://raw.githubusercontent.com/ICrashWindows12/macsploit_theme_insta
 # Notes
 - If macsploit is open, restart macsploit (close and open) to see the theme in effect
 - Im not paid to do this. I just do this for fun.
+- In the future this will be deprecated (maybe) to turn into an actual app or be part of Macsploit!
 
 # Things I want to achieve
-- Get a custom role in discord server (the one for macsploit)
+- Get a custom role in discord server (the one for macsploit) or just get a contributor role!
+
